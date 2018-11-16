@@ -1,0 +1,46 @@
+<launch>
+
+	<!-- Some general parameters -->
+	<param name="use_sim_time" value="true" />
+	<rosparam file="$(find tb3_rescue)/launch/includes/ros.yaml"/>
+
+	<!-- Start Stage simulator with a given environment -->
+
+
+	<!-- Start the Operator to control the simulated robot -->
+	<node name="Operator" pkg="nav2d_operator" type="operator" >
+		<!-- <remap from="scan" to="scan"/> -->
+		<rosparam file="$(find tb3_rescue)/launch/includes/operator.yaml"/>
+		<rosparam file="$(find tb3_rescue)/launch/includes/costmap.yaml" ns="local_map" />
+	</node>
+
+	 <!--Start Mapper to genreate map from laser scans -->
+	 <node name="Mapper" pkg="nav2d_karto" type="mapper">
+		<rosparam file="$(find tb3_rescue)/launch/includes/mapper.yaml"/>
+	</node>
+
+	<!-- Gmapping -->
+	<!--<node pkg="gmapping" type="slam_gmapping" name="Mapper" output="screen">-->
+		<!--<param name="base_frame" value="base_footprint"/>-->
+		<!--<param name="odom_frame" value="odom"/>-->
+		<!--<param name="map_frame"  value="map"/>-->
+		<!--<rosparam file="$(find tb3_rescue)/launch/includes/mapper.yaml"/>-->
+	<!--</node>-->
+
+	<!-- Start the Navigator to move the robot autonomously -->
+	<node name="Navigator" pkg="nav2d_navigator" type="navigator">
+		<rosparam file="$(find tb3_rescue)/launch/includes/navigator.yaml"/>
+	</node>
+
+	<node name="GetMap" pkg="nav2d_navigator" type="get_map_client" />
+	<node name="Explore" pkg="nav2d_navigator" type="explore_client" />
+	<node name="SetGoal" pkg="nav2d_navigator" type="set_goal_client" />
+
+	<!-- Start the joystick-driver and remote-controller for operation-->
+	<!--<node name="Joystick" pkg="joy" type="joy_node" />-->
+	<!--<node name="Remote" pkg="nav2d_remote" type="remote_joy" />-->
+
+	<!-- RVIZ to view the visualization -->
+	<node name="RVIZ" pkg="rviz" type="rviz" args=" -d $(find tb3_rescue)/models/rescue.rviz" />
+
+</launch>

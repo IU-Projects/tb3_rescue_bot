@@ -1,0 +1,17 @@
+###########################################################
+# Defines topics services and frames for all modules
+
+### TF frames #############################################
+laser_frame: base_scan #base_laser_link #base_scan
+robot_frame: base_link #base_link #turtlebot3_waffle
+odometry_frame: odom
+offset_frame: offset
+map_frame: map
+
+### ROS topics ############################################
+map_topic: map
+laser_topic: scan
+odometry_topic: odom
+
+### ROS services ##########################################
+map_service: static_map

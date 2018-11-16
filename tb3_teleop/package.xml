@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<package format="2">
+  <name>tb3_teleop</name>
+  <version>1.1.0</version>
+  <description>
+    Provides Keypad control to rescue bot.
+  </description>
+  <license>BSD</license>
+  <author>Kadupitiya</author>
+  <author email="kadu@iu.edu">Kadupitiya</author>
+  <maintainer email="kadu@iu.edu">Kadupitiya</maintainer>
+  <buildtool_depend>catkin</buildtool_depend>
+  <depend>rospy</depend>
+  <depend>geometry_msgs</depend>
+</package>
