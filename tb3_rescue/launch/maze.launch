@@ -10,11 +10,6 @@
   <arg name="configuration_basename" default="turtlebot3_lds_2d.lua"/>
   <arg name="open_rviz" default="true"/>
 
-  <!-- TurtleBot3 -->
-  <include file="$(find tb3_rescue)/launch/turtlebot3_remote.launch">
-    <arg name="model" value="$(arg model)" />
-  </include>
-
   <!-- Maze Loading -->
   <include file="$(find gazebo_ros)/launch/empty_world.launch">
     <arg name="world_name" value="$(find tb3_rescue)/models/model.world"/>

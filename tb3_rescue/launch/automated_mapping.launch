@@ -1,11 +1,15 @@
 <launch>
 
+	<arg name="model" default="$(env TURTLEBOT3_MODEL)" doc="model type [burger, waffle, waffle_pi]"/>
 	<!-- Some general parameters -->
-	<param name="use_sim_time" value="true" />
+	<!--<param name="use_sim_time" value="true" />-->
 	<rosparam file="$(find tb3_rescue)/launch/includes/ros.yaml"/>
 
 	<!-- Start Stage simulator with a given environment -->
-
+	<!-- TurtleBot3 -->
+	<include file="$(find tb3_rescue)/launch/turtlebot3_remote.launch">
+		<arg name="model" value="$(arg model)" />
+	</include>
 
 	<!-- Start the Operator to control the simulated robot -->
 	<node name="Operator" pkg="nav2d_operator" type="operator" >
