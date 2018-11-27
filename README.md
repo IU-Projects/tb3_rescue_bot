@@ -37,6 +37,10 @@ Here is the link to the [video]() demonstartion of the project.
   
   * ```roslaunch tb3_rescue automated_mapping.launch```
 
+* To add mapping victims, Start the victim mapper in a another terminal window
+
+  * ```rosrun tb3_victim_mapper victim_mapper```
+
 * Then, Launch a command line options pannel in a seperate terminal.
   
   * ```roslaunch tb3_teleop tb3_teleop.launch```
