@@ -136,8 +136,20 @@ void imageCallback(const sensor_msgs::ImageConstPtr& msg ) {
         Mat image = cv_bridge::toCvShare(msg, "bgr8")->image;
         Mat outputImage;
         inRange(image, Scalar(10,10,100), Scalar(100,100,255), outputImage);
+        //lower_green = np.array([65,60,60])
+        //upper_green = np.array([80,255,255])
+        Mat outputImage2;
+        inRange(image, Scalar(65,60,60), Scalar(80,255,255), outputImage2);
+        Mat outputImage3;
+        inRange(image, Scalar(100,150,0), Scalar(140,255,255), outputImage3);
         int x1;
+        int x2;
+        int x3;
         x1 = countNonZero(outputImage);
+        //lower_blue = np.array([100,150,0])
+        //upper_blue = np.array([140,255,255])
+        x2 = countNonZero(outputImage2);
+        x3 = countNonZero(outputImage3);
         if(x1>90000){
             cout << "Victim Detected, " << "Output Value : " << x1 << ", Position : " << xg << ", " << yg << "Victim Count : " << victimLocations.size() << endl;
 
@@ -151,7 +163,7 @@ void imageCallback(const sensor_msgs::ImageConstPtr& msg ) {
             }
 
         } else {
-            cout << "Keep Searching ..." << endl;
+            cout << "Keep Searching ..." << x1 << x2 << x3 << endl;
         }
 
     } catch (cv_bridge::Exception& e) {
