@@ -1,25 +1,7 @@
 # tb3_rescue_bot
 
 ## Overview
-Disasters are horrifying and cost the lives of
-mankind in many ways while influencing relatives and other
-people. Because of that, higher priority always should be given
-to act as quickly as possible to perform rescue operations.
-Due to higher density of the population and buildings in
-urban areas are more prone to disasters. As inspired by these
-requirements, simplified USAR robot package for package for
-Robot Operating System(ROS) was implemented to replicate
-a USAR task. Our Robot explores the maze and successfully
-detect and locate the victims and navigate back to the starting
-point. At the end robot provides the map of the maze with the
-marked location of the beacons. We experimented with wall
-following exploration and frontier exploration. Frontier-based
-exploration was used as it was more suited for the environments
-with open spaces. Victim detection was achieved through opencv
-and Kinect RGB camera (turtlebot 3). We validated our
-approach through four different gazebo environments and one
-real world experiment using turtlebot3 to generate a clear map
-of the environment with marked victims on it.
+Disasters are horrifying and cost the lives of mankind in many ways while influencing relatives and other people. Because of that, higher priority always should be given to act as quickly as possible to perform rescue operations. Due to the higher density of the population and buildings in urban areas are more prone to disasters. As inspired by these requirements, simplified USAR robot package for Robot Operating System(ROS) was implemented to replicate a USAR task. Our Robot explores the maze and successfully detect and locate the victims and navigate back to the starting point. In the end, the robot provides the map of the maze with the marked location of the beacons. We experimented with wall following exploration and frontier exploration. Frontier-based exploration was used as it was more suited for environments with open spaces. Victim detection was achieved through opencv and Kinect RGB camera (turtlebot 3). We validated our approach through four different gazebo environments and one real-world experiment using turtlebot3 to generate a clear map of the environment with marked victims on it.
 
 ## Video demonstration
 Here is the link to the [video](https://youtu.be/vjE009efW6Y) demonstartion of the project.
