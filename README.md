@@ -4,7 +4,7 @@
 tb3_rescue_bot for USAR
 
 ## Video demonstration
-Here is the link to the [video]() demonstartion of the project.
+Here is the link to the [video](https://youtu.be/vjE009efW6Y) demonstartion of the project.
 
 ## Technology Usage
 
